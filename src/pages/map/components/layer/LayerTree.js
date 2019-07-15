@@ -338,7 +338,7 @@ class LayerTree extends Component {
         }
     }
 
-    getGroupNode = ({id, name, visibility, isExpanded}) => {
+    getGroupNode = ({id, name, visibility, isExpanded, layers}) => {
         const { styleHelper, selected, selecteds } = this.props;
         const isHidden = visibility === 'none'; // 是否隐藏
         const isSelected = id === selected; // 选中状态
@@ -373,7 +373,7 @@ class LayerTree extends Component {
                 icon = {<Icon icon={!isExpanded ? 'folder-close' : 'folder-open'} />}
                 styleHelper = {styleHelper}
             />,
-            hasCaret: true,
+            hasCaret: layers.length > 0,
             isExpanded: !!isExpanded,
             secondaryLabel: (<Popover content={content} position={Position.RIGHT_TOP}>
                 <Button small={true} minimal={true} icon="more"></Button>
@@ -386,8 +386,9 @@ class LayerTree extends Component {
         const { styleHelper } = this.props;
         const _group = styleHelper.getLayer(id);
         if(_group) {
+            const layers = styleHelper.getGroupLayers(id);
             const {name, visibility, isExpanded} = _group.metadata;
-            return this.getGroupNode({id, name, visibility, isExpanded});
+            return this.getGroupNode({id, name, visibility, isExpanded, layers});
         }
         return null;
     }

@@ -1,11 +1,11 @@
 if(window.PL) {
     var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?ceea4187d8f78ff5a527df9d3d90a499";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
+    // (function() {
+    //   var hm = document.createElement("script");
+    //   hm.src = "https://hm.baidu.com/hm.js?ceea4187d8f78ff5a527df9d3d90a499";
+    //   var s = document.getElementsByTagName("script")[0]; 
+    //   s.parentNode.insertBefore(hm, s);
+    // })();
     var config = {path: {root:'./'}};
     var SIGNTYPE = window.SIGNTYPE || 'login';
     function toCenter() {

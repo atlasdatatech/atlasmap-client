@@ -37,6 +37,7 @@ export default class Style {
         this.syncEvent = syncEvent;
     }
 
+    // style初始化
     initInspect = () => {
         if(window.atlas) {
             this.inspectorPopup =  new atlas.Popup({className:'atlas-popup-a'});
@@ -58,6 +59,7 @@ export default class Style {
         }
     }
 
+    // 校验样式
     validateStyleBySpec(style) {
         const errors = validate(style);
         if(errors&& errors.length > 0 ){
@@ -111,6 +113,7 @@ export default class Style {
         this.update();
     }
 
+    // 获取组图层
     getGroupLayers = (id) => {
         return this.style.layers.filter(ly => ly.metadata && ly.metadata.group === id);
     }

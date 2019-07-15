@@ -342,6 +342,7 @@ export class EditableWithHandle extends Component{
                             edit ? "bp3-input bp3-fill bp3-small" : styles.disableEdit, 
                             !edit && 'text-overflow',
                             !value && "bp3-intent-warning") }
+                        style = {{pointerEvents: edit ? "auto" : "none"}}
                         type="text" 
                         onChange = {(e) => {onChange && onChange(e.target.value)}}
                         readOnly = {!edit}

@@ -143,7 +143,8 @@ export default {
             _source:{
                 type: 'raster',
                 'tiles': [
-                    'http://mt0.google.cn/vt/lyrs=s&x={x}&y={y}&z={z}'
+                    // 'http://mt0.google.cn/vt/lyrs=s&x={x}&y={y}&z={z}'
+                    'https://mt2.google.cn/maps/vt?lyrs=y&hl=zh-CN&gl=CN&&x={x}&y={y}&z={z}&scale=1'
                 ],
                 'tileSize': 256
             }
